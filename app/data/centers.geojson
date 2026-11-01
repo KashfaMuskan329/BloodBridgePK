@@ -1,0 +1,764 @@
+{
+  "type": "FeatureCollection",
+  "name": "BloodBridge PK — Lahore + Islamabad/Rawalpindi directory snapshot",
+  "metadata": {
+    "checkedOn": "2026-11-01",
+    "sources": [
+      "https://pbta.punjab.gov.pk/licensed_blood_banks",
+      "https://chich.edu.pk/hematologyoncology",
+      "https://fatimid.org/contact-us/",
+      "https://sundas.org/centers/lahore",
+      "https://www.pims.gov.pk/department-thalassemia.php",
+      "https://pathwel.org.pk/contact-us/",
+      "https://legacy.sundas.org/Master/Islamabad"
+    ],
+    "note": "Historical regulatory directory and provider public listings, combined with illustrative neighborhood-level pins. Validate with each provider. No blood inventory, donor availability, patient data or actual camps.",
+    "method": "Hand curated, not a complete census. No claim that all listed blood banks currently have stock."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.32,
+          31.5486
+        ]
+      },
+      "properties": {
+        "id": "l-sundas",
+        "name": "Sundas Foundation — Lahore",
+        "city": "lahore",
+        "category": "thalassemia",
+        "area": "Shadman",
+        "address": "880 Shadman-1, near Crescent Girls School, Lahore",
+        "sourceUrl": "https://sundas.org/centers/lahore",
+        "note": "Dedicated thalassaemia and blood-support services",
+        "phone": "+924237422131",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.262,
+          31.459
+        ]
+      },
+      "properties": {
+        "id": "l-fatimid",
+        "name": "Fatimid Foundation — Lahore",
+        "city": "lahore",
+        "category": "thalassemia",
+        "area": "Johar Town",
+        "address": "72-A, Block D2, off Khayaban-e-Firdousi, Johar Town, Lahore",
+        "sourceUrl": "https://fatimid.org/contact-us/",
+        "note": "Publicly listed hematology and blood support",
+        "phone": "+924235210834",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.326,
+          31.4762
+        ]
+      },
+      "properties": {
+        "id": "l-children",
+        "name": "Children’s Hospital — Thalassaemia Clinic",
+        "city": "lahore",
+        "category": "thalassemia",
+        "area": "Ferozepur Road",
+        "address": "The Children’s Hospital, Ferozepur Road, Lahore",
+        "sourceUrl": "https://chich.edu.pk/hematologyoncology",
+        "note": "Official thalassaemia clinic and transfusion service; contact for appointment",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.32,
+          31.5064
+        ]
+      },
+      "properties": {
+        "id": "l-noor",
+        "name": "Noor Thalassemia Foundation",
+        "city": "lahore",
+        "category": "thalassemia",
+        "area": "Garden Town",
+        "address": "74-A, Garden Block, Garden Town, Lahore",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Noor+Thalassemia+Foundation+Lahore",
+        "note": "Publicly listed thalassaemia patient support; current services require confirmation",
+        "phone": "+924237429047",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.276,
+          31.5465
+        ]
+      },
+      "properties": {
+        "id": "l-rmt",
+        "name": "Riaz Mansoor Trust",
+        "city": "lahore",
+        "category": "thalassemia",
+        "area": "Gulshan-e-Ravi",
+        "address": "239, H Block, Gulshan-e-Ravi, Lahore",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Riaz+Mansoor+Trust+Lahore",
+        "note": "Publicly listed thalassaemia care organisation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.315,
+          31.567
+        ]
+      },
+      "properties": {
+        "id": "l-gangar",
+        "name": "Sir Ganga Ram Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Queen’s Road",
+        "address": "Sir Ganga Ram Hospital, Queen’s Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3119,
+          31.5798
+        ]
+      },
+      "properties": {
+        "id": "l-mayo",
+        "name": "Mayo Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Old Anarkali",
+        "address": "Mayo Hospital, Hospital Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2717,
+          31.4758
+        ]
+      },
+      "properties": {
+        "id": "l-jinnah",
+        "name": "Jinnah Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Faisal Town",
+        "address": "Jinnah Hospital, Maulana Shaukat Ali Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3422,
+          31.4745
+        ]
+      },
+      "properties": {
+        "id": "l-lg",
+        "name": "Lahore General Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Ferozepur Road",
+        "address": "Lahore General Hospital, Ferozepur Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3247,
+          31.548
+        ]
+      },
+      "properties": {
+        "id": "l-fmh",
+        "name": "Fatima Memorial Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Shadman",
+        "address": "Fatima Memorial Hospital, Shadman, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3283,
+          31.5515
+        ]
+      },
+      "properties": {
+        "id": "l-pic",
+        "name": "Punjab Institute of Cardiology Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Jail Road",
+        "address": "Punjab Institute of Cardiology, Jail Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2871,
+          31.5069
+        ]
+      },
+      "properties": {
+        "id": "l-sheikh",
+        "name": "Sheikh Zayed Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "New Muslim Town",
+        "address": "Sheikh Zayed Hospital, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3241,
+          31.55
+        ]
+      },
+      "properties": {
+        "id": "l-midcity",
+        "name": "Mid City Hospital Blood Bank",
+        "city": "lahore",
+        "category": "bloodbank",
+        "area": "Shadman II",
+        "address": "3-A, Shadman II, Jail Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2875,
+          31.5137
+        ]
+      },
+      "properties": {
+        "id": "l-farooq",
+        "name": "Farooq Hospital Blood Bank",
+        "city": "lahore",
+        "category": "bloodbank",
+        "area": "Iqbal Town",
+        "address": "2-3 Asif Block, Allama Iqbal Town, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2987,
+          31.5436
+        ]
+      },
+      "properties": {
+        "id": "l-alkhidmat",
+        "name": "Al-Khidmat Blood Bank — Surayya Azeem Hospital",
+        "city": "lahore",
+        "category": "bloodbank",
+        "area": "Chauburji",
+        "address": "Surayya Azeem Teaching Hospital, 40 Multan Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3176,
+          31.5024
+        ]
+      },
+      "properties": {
+        "id": "l-hameed",
+        "name": "Hameed Latif Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Garden Town",
+        "address": "14 Abu Bakar Block, New Garden Town, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2562,
+          31.4597
+        ]
+      },
+      "properties": {
+        "id": "l-doctors",
+        "name": "Doctors Hospital & Medical Centre Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Johar Town",
+        "address": "151 G-1, Johar Town, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3637,
+          31.5746
+        ]
+      },
+      "properties": {
+        "id": "l-shalimar",
+        "name": "Shalimar Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Mughalpura",
+        "address": "Shalimar Link Road, Mughalpura, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3275,
+          31.5514
+        ]
+      },
+      "properties": {
+        "id": "l-omer",
+        "name": "Omer Hospital Blood Bank",
+        "city": "lahore",
+        "category": "bloodbank",
+        "area": "Shadman",
+        "address": "5 Shadman II, Jail Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3265,
+          31.5441
+        ]
+      },
+      "properties": {
+        "id": "l-chughtai",
+        "name": "Chughtai Lab Blood Bank — Jail Road",
+        "city": "lahore",
+        "category": "bloodbank",
+        "area": "Jail Road",
+        "address": "10 Jail Road, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Historical directory listing; confirm current operation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2604,
+          31.4504
+        ]
+      },
+      "properties": {
+        "id": "l-shaukat",
+        "name": "Shaukat Khanum Hospital Blood Bank",
+        "city": "lahore",
+        "category": "hospital",
+        "area": "Johar Town",
+        "address": "7-A, Block R-III, Johar Town, Lahore",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood bank; patient access rules need confirmation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0485,
+          33.7088
+        ]
+      },
+      "properties": {
+        "id": "i-pims",
+        "name": "PIMS Thalassaemia & Haemophilia Center",
+        "city": "islamabad",
+        "category": "thalassemia",
+        "area": "G-8/3",
+        "address": "Children’s Hospital, PIMS Complex, G-8/3, Islamabad",
+        "sourceUrl": "https://www.pims.gov.pk/department-thalassemia.php",
+        "note": "Official dedicated thalassaemia clinic and blood product transfusion",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0207,
+          33.7098
+        ]
+      },
+      "properties": {
+        "id": "i-sundas",
+        "name": "Sundas Foundation — Islamabad",
+        "city": "islamabad",
+        "category": "thalassemia",
+        "area": "F-9 Park",
+        "address": "Fatima Jinnah Park, Mehran Gate, F-9, Islamabad",
+        "sourceUrl": "https://legacy.sundas.org/Master/Islamabad",
+        "note": "Thalassaemia care and donation support; contact before travel",
+        "phone": "+92512324241",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0476,
+          33.6972
+        ]
+      },
+      "properties": {
+        "id": "i-aziz",
+        "name": "Abdul Aziz Thalassemia Center",
+        "city": "islamabad",
+        "category": "thalassemia",
+        "area": "G-9/3",
+        "address": "Al Fateh Market, Street 3, near Hockey Ground, G-9/3, Islamabad",
+        "sourceUrl": "https://abdulazizthalassemia.org/contact-new/",
+        "note": "Public thalassaemia support center",
+        "phone": "+92512284400",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0643,
+          33.6864
+        ]
+      },
+      "properties": {
+        "id": "i-shifa",
+        "name": "Shifa International Hospital Blood Bank",
+        "city": "islamabad",
+        "category": "hospital",
+        "area": "H-8/4",
+        "address": "Pitras Bukhari Road, H-8/4, Islamabad",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Shifa+International+Hospital+Blood+Bank",
+        "note": "Hospital blood transfusion support; access restrictions may apply",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.1496,
+          33.6851
+        ]
+      },
+      "properties": {
+        "id": "i-rbc",
+        "name": "Islamabad Regional Blood Center",
+        "city": "islamabad",
+        "category": "bloodbank",
+        "area": "Chak Shahzad",
+        "address": "Park Road, Chak Shahzad, Islamabad",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Regional+Blood+Center+Islamabad",
+        "note": "Regional blood processing facility; may not issue units to walk-in patients",
+        "phone": "+92518434306",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0698,
+          33.6026
+        ]
+      },
+      "properties": {
+        "id": "i-pathwel",
+        "name": "PATHWEL Thalassaemia Centre",
+        "city": "islamabad",
+        "category": "thalassemia",
+        "area": "Rawalpindi · Tipu Road",
+        "address": "Opposite Rawalpindi Medical University, Tipu Road, Rawalpindi",
+        "sourceUrl": "https://pathwel.org.pk/contact-us/",
+        "note": "Dedicated thalassaemia treatment and in-house blood bank",
+        "phone": "+92515706515",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0754,
+          33.5792
+        ]
+      },
+      "properties": {
+        "id": "i-jsf",
+        "name": "Jamila Sultana Foundation",
+        "city": "islamabad",
+        "category": "thalassemia",
+        "area": "Rawalpindi · Chaklala III",
+        "address": "Street 12, Chaklala Scheme III, Rawalpindi",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Thalassaemia-focused foundation; location is in Rawalpindi",
+        "phone": "+92515153335",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0747,
+          33.6525
+        ]
+      },
+      "properties": {
+        "id": "i-holy",
+        "name": "Holy Family Hospital Blood Unit",
+        "city": "islamabad",
+        "category": "hospital",
+        "area": "Rawalpindi · Satellite Town",
+        "address": "Holy Family Hospital, Satellite Town, Rawalpindi",
+        "sourceUrl": "https://pbta.punjab.gov.pk/licensed_blood_banks",
+        "note": "Hospital blood unit; verify current services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.033,
+          33.5925
+        ]
+      },
+      "properties": {
+        "id": "i-afit",
+        "name": "AFIT Transfusion Services",
+        "city": "islamabad",
+        "category": "bloodbank",
+        "area": "Rawalpindi Cantt",
+        "address": "Convoy Road, Rawalpindi Cantt",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=AFIT+Blood+Bank+Rawalpindi",
+        "note": "Transfusion institute; public access needs prior confirmation",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.0515,
+          33.6828
+        ]
+      },
+      "properties": {
+        "id": "i-redcrescent",
+        "name": "Pakistan Red Crescent — National HQ",
+        "city": "islamabad",
+        "category": "bloodbank",
+        "area": "H-8/2",
+        "address": "Ashfaq Ahmed Road, H-8/2, Islamabad",
+        "sourceUrl": "https://www.google.com/maps/search/?api=1&query=Pakistan+Red+Crescent+Society+H8+Islamabad",
+        "note": "Humanitarian center; confirm donation and blood-issue services",
+        "phone": "",
+        "stockStatus": "not available",
+        "coordinateAccuracy": "approximate illustrative neighborhood anchor — not verified entrance coordinates",
+        "sourceStatus": "Directory/provider listing; not a live license or service verification"
+      }
+    }
+  ]
+}

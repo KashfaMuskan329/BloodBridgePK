@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111d2e" />
+  <meta name="description" content="BloodBridge PK is a patient-centered, map-based blood access planning prototype for thalassaemia families in Lahore and Islamabad, with optional Amazon Location Service maps and route calculations." />
+  <meta property="og:title" content="BloodBridge PK — A journey to blood support" />
+  <meta property="og:description" content="Discover the human journey behind blood access. Explore public Lahore and Islamabad/Rawalpindi service listings, plan routes, and simulate a new donation touchpoint." />
+  <title>BloodBridge PK · Every journey matters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <div class="topline"><span class="topline-dot"></span> BUILT FOR THE AWS WEEKEND MAP IT CHALLENGE <span class="topline-sep">/</span> A CARE-FIRST GEOSPATIAL EXPERIENCE <span class="topline-right">LAHORE + ISLAMABAD&nbsp; ✦&nbsp; ✦</span></div>
+  <header class="nav shell">
+    <a class="brand" href="#home" aria-label="BloodBridge PK home"><span class="brand-icon">✚<span class="brand-drop"></span></span><span class="brand-name">bloodbridge<span class="brand-pk">.pk</span></span></a>
+    <div class="nav-middle"><span class="nav-live"><i></i> Interactive prototype</span><a href="#experience">Explore map</a><a href="#mission">Our mission</a></div>
+    <button class="nav-about" id="aboutBtn">About this project <span>↗</span></button>
+  </header>
+
+  <main id="home" class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE DISTANCE BETWEEN NEED AND HELP</div>
+        <h1>Every drop matters.<br/><em>Every journey, too.</em></h1>
+        <p>For thalassaemia families, finding blood support shouldn't mean searching blindly. Explore Lahore and Islamabad’s care networks through the eyes of a patient — then imagine how access could improve.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#experience">Explore a patient's journey <span>↗</span></a><button class="button button-text" id="watchStoryBtn">▶ &nbsp;Play the story</button></div>
+        <div class="hero-credit"><span class="heart-badge">♥</span> Built with empathy, public directory data &amp; AWS location technology</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div>
+        <div class="art-glow"></div>
+        <div class="art-avatar avatar-large"><span class="avatar-hair"></span><span class="avatar-face"><i class="eye one"></i><i class="eye two"></i><i class="smile"></i></span><span class="avatar-body"></span></div>
+        <div class="float-tag tag-one"><span class="tiny-ring ring-rose">♥</span><span>One child.<small>One important journey.</small></span></div>
+        <div class="float-tag tag-two"><span class="tiny-ring ring-cream">⌖</span><span>Real places.<small>Better-informed choices.</small></span></div>
+        <div class="art-label"><span>01 — CARE MADE VISIBLE</span><b>Lahore, Pakistan</b></div>
+      </div>
+    </section>
+
+    <section class="impact-strip" aria-label="Project overview">
+      <div class="impact-stat"><span class="impact-icon">⌖</span><div><strong id="totalCentersTop">31</strong><small>curated locations · 2 metros</small></div></div>
+      <div class="impact-separator"></div>
+      <div class="impact-stat"><span class="impact-icon">♡</span><div><strong>06</strong><small>fictional patient journeys</small></div></div>
+      <div class="impact-separator"></div>
+      <div class="impact-stat"><span class="impact-icon">⤳</span><div><strong>01</strong><small>interactive camp simulator</small></div></div>
+      <div class="impact-message">“A map should tell us <em>where help could be.</em>”</div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="section-heading"><div><div class="eyebrow">THE INTERACTIVE EXPERIENCE</div><h2>Walk a mile in their shoes<span class="heading-dot">.</span></h2><p>Choose a fictional patient, explore real listed support locations, and see the difference a better-connected care network could make.</p></div><div class="heading-step"><b>01</b><span>UNDERSTAND<br/>THE JOURNEY</span></div></div>
+      <div class="workspace">
+        <aside class="patient-panel panel">
+          <div class="panel-head"><div class="panel-overline">PATIENT STORY</div><span class="info-chip">SIMULATED</span></div>
+          <div class="patient-profile"><div class="patient-portrait" id="patientPortrait"><span class="avatar-hair"></span><span class="avatar-face"><i class="eye one"></i><i class="eye two"></i><i class="smile"></i></span><span class="avatar-body"></span></div><div><span class="profile-overline">MEET</span><h3 id="patientName">Areeba, 8</h3><p id="patientSubtitle">A child’s journey through Lahore</p></div></div>
+          <div class="story-box"><span class="quote-mark">“</span><p id="patientStory">Areeba needs regular transfusion support. Her family wants to discover and contact nearby care options.</p></div>
+          <div class="field-group"><label for="citySelect">EXPLORE A CITY</label><div class="select-wrap"><select id="citySelect"><option value="lahore">Lahore · Punjab</option><option value="islamabad">Islamabad + Rawalpindi</option></select><span>⌄</span></div></div><div class="field-group"><label for="patientSelect">CHOOSE A STORY</label><div class="select-wrap"><select id="patientSelect"><option value="areeba">Areeba · Township</option><option value="hamza">Hamza · Shahdara</option><option value="zoya">Zoya · Johar Town</option></select><span>⌄</span></div></div>
+          <div class="two-fields"><div class="field-group"><label for="bloodType">BLOOD GROUP</label><div class="select-wrap"><select id="bloodType"><option>B+</option><option>A+</option><option>O+</option><option>AB+</option><option>B-</option><option>A-</option><option>O-</option><option>AB-</option></select><span>⌄</span></div></div><div class="field-group"><label for="centerType">SHOW LOCATIONS</label><div class="select-wrap"><select id="centerType"><option value="all">All types</option><option value="thalassemia">Thal. centres</option><option value="bloodbank">Blood banks</option><option value="hospital">Hospitals</option></select><span>⌄</span></div></div></div>
+          <div class="patient-location"><span class="location-circle">⌖</span><div><small>PATIENT'S APPROXIMATE START</small><strong id="patientArea">Township, Lahore</strong></div><span class="fictional">FICTIONAL</span></div>
+          <button id="findHelpBtn" class="button button-primary full-btn">Find nearby support <span>→</span></button>
+          <p class="panel-disclaimer">Blood type is a planning input only. It does <b>not</b> indicate stock, eligibility or compatibility. Always contact and confirm with a clinician.</p>
+          <div class="patient-footer"><span class="pulse"><i></i></span> Made to see the journey, not to replace medical advice.</div>
+        </aside>
+
+        <section class="map-panel panel" aria-label="Interactive blood access map">
+          <div class="map-toolbar"><div class="map-title"><span class="map-title-dot"></span><span>LAHORE CARE NETWORK</span><small id="mapSourceLabel">Open map preview</small></div><div class="map-tools"><button id="fitMapBtn" title="Reset map view" aria-label="Reset map view">⌖</button><button id="satelliteBtn" title="Switch map style" aria-label="Switch map style">◐</button></div></div>
+          <div class="map-stage" id="map"><div class="map-skeleton"><div class="map-skeleton-circle"></div><div class="map-loading">Preparing Lahore’s care map…</div></div></div>
+          <div class="map-legend"><div><i class="legend-dot dot-patient"></i> Patient</div><div><i class="legend-dot dot-thal"></i> Thalassaemia</div><div><i class="legend-dot dot-bank"></i> Blood bank</div><div><i class="legend-dot dot-hospital"></i> Hospital</div><div><i class="legend-dot dot-camp"></i> Proposed camp</div></div>
+          <div class="map-bottom"><div class="map-databanner"><span>ⓘ</span> Directory-listed facilities · approximate pins · no live blood stock</div><span class="map-attribution">Map tiles attribution shown on the map</span></div>
+          <div class="map-toast" id="mapToast" role="status" aria-live="polite"></div>
+        </section>
+
+        <aside class="results-panel panel">
+          <div class="results-header"><div><div class="panel-overline">CARE CONNECTIONS</div><h3>Find a way forward<span class="heading-dot">.</span></h3></div><span class="results-count" id="resultsCount">0 places</span></div>
+          <p class="results-intro" id="resultsIntro">Browse directory-sourced places ranked by straight-line distance. Select one for a route preview.</p>
+          <div class="result-list" id="resultsList" aria-live="polite"></div>
+          <div class="route-card" id="routeCard"><div class="route-icon">⤳</div><div><b>Your next step</b><p>Select a support point to explore the journey. Confirm details by calling the centre.</p></div></div>
+          <div class="results-note"><span>!</span> Nearest does not mean blood is available. Facilities must confirm screening, compatibility and access.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="simulator" id="simulator">
+      <div class="sim-copy"><div class="eyebrow">02 — PLAN A BETTER TOMORROW</div><h2>What if help was<br/><em>closer to home?</em></h2><p>Turn the map into a planning tool. Choose where a <b>hypothetical blood donation outreach camp</b> might be placed, then explore how the travel-distance picture changes for the sample neighborhoods.</p><div class="sim-info"><span class="sim-info-icon">✦</span><div><b>We’re imagining an opportunity, not claiming one exists.</b><small>New camp locations and outcomes are simulated. Camps are donation touchpoints, not confirmed blood-stock or transfusion sites.</small></div></div></div>
+      <div class="sim-controls"><div class="sim-top"><span class="sim-mode-label">EXPERIMENT 01 / LOCATION PLANNING</span><span class="sim-icon">✚</span></div><h3>Place a new donation camp</h3><p>Pick a suggested neighborhood or place a pin anywhere on the map.</p><div class="neighborhoods"><button class="neighborhood" data-camp="shahdara">Shahdara <span>↗</span></button><button class="neighborhood" data-camp="township">Township <span>↗</span></button><button class="neighborhood" data-camp="raiwind">Raiwind Road <span>↗</span></button></div><div class="sim-actions"><button class="button button-coral" id="placeCampBtn">⌖ &nbsp; Place by clicking map</button><button class="button button-outline" id="resetCampBtn">Reset</button></div><div class="sim-metrics" id="simMetrics"><div><span>WITHOUT CAMP</span><strong id="beforeMetric">—</strong><small>mean nearest listed center</small></div><span class="metrics-arrow">→</span><div><span>WITH CAMP</span><strong id="afterMetric">—</strong><small>mean nearest point incl. camp</small></div></div><p class="sim-fineprint" id="simNote">Choose a location to simulate a new outreach touchpoint. Distances are straight-line estimates across 12 fictional neighborhood sample origins, not road travel or population coverage.</p></div>
+    </section>
+
+    <section id="mission" class="mission"><div class="mission-left"><div class="eyebrow eyebrow-light">MORE THAN COORDINATES</div><h2>Behind every pin,<br/>there's <em>a person.</em></h2><p>Maps can make distances visible. But behind the numbers are families navigating repeated visits, uncertain availability, and long journeys.</p><a class="mission-link" href="https://sundas.org/centers/lahore" target="_blank" rel="noopener noreferrer">Learn how Sundas Foundation supports thalassaemia patients <span>↗</span></a></div><div class="mission-right"><div class="mission-quote">“Good maps don't just show us where things are. They help us ask where support is missing.”</div><div class="mission-meta"><span class="mission-icon">♥</span><div><strong>Built for human impact</strong><small>A prototype for learning, planning &amp; awareness</small></div></div></div></section>
+
+    <section class="sources"><div><div class="eyebrow">TRANSPARENT BY DESIGN</div><h2>Real listings. Honest limitations.</h2><p>Facility names and addresses come from public directories. Coordinates are approximate neighborhood anchors, not verified entrance locations. Some regulatory listings are historical, so current status must be checked. No blood inventory, patient records, availability or clinical matching is collected or claimed.</p></div><div class="sources-links"><a href="https://pbta.punjab.gov.pk/licensed_blood_banks" target="_blank" rel="noopener">Punjab Blood Transfusion Authority (historical directory) ↗</a><a href="https://sundas.org/centers/lahore" target="_blank" rel="noopener">Sundas Foundation · Lahore ↗</a><a href="https://fatimid.org/contact-us/" target="_blank" rel="noopener">Fatimid Foundation ↗</a><a href="https://www.pims.gov.pk/department-thalassemia.php" target="_blank" rel="noopener">PIMS Islamabad · Thalassaemia Centre ↗</a></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><div class="footer-brand">✚&nbsp; bloodbridge<span>.pk</span></div><div>Made for the AWS Builder Center Weekend Map It Challenge · 2026</div><button id="backTopBtn">Back to top ↑</button></div></footer>
+
+  <div id="modalOverlay" class="modal-overlay" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="modalClose" class="modal-x" aria-label="Close">×</button><div class="eyebrow">ABOUT BLOODBRIDGE PK</div><h2 id="modalTitle">Care is more than a pin.</h2><p>BloodBridge PK is a <strong>prototype and educational simulation</strong> focused on the journey of thalassaemia families in Lahore and Islamabad. It uses publicly listed facility information and clearly marked fictional scenarios.</p><div class="modal-columns"><div><b>What is real</b><span>Facility names, publicly listed addresses and links, Amazon Location map/routing when configured.</span></div><div><b>What is simulated</b><span>Patient stories, selected starting points, camp placement and distance-impact comparisons.</span></div></div><p class="modal-warning">Not a medical or emergency service. Do not rely on the map for blood supply, suitability, treatment or urgent decision-making. Call the relevant facility and healthcare professional directly.</p><button id="modalOkay" class="button button-primary">I understand <span>→</span></button></div></div>
+
+  <script src="config.js"></script>
+  <script src="data/centers.js"></script>
+  <!-- MapLibre: primary CDN plus fallback if blocked -->
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.6.1/dist/maplibre-gl.js"></script>
+  <script>
+    if (!window.maplibregl) {
+      document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.1/maplibre-gl.css">');
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/5.6.1/maplibre-gl.min.js"><\/script>');
+    }
+  </script>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

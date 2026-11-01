@@ -1,0 +1,9 @@
+.venv/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.zip
+*.mp4
+app/app.backup.js
+node_modules/
