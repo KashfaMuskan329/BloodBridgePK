@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#11264d"/>
+      <stop offset="100%" stop-color="#243f6d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0b1730" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#f2a0af"/>
+    </marker>
+    <style>
+      .title{font:700 42px Inter,Arial,sans-serif; fill:#ffffff}
+      .subtitle{font:400 22px Inter,Arial,sans-serif; fill:#f4a0b0}
+      .box{fill:#f8efef; stroke:none; filter:url(#shadow)}
+      .h{font:700 30px Inter,Arial,sans-serif; fill:#233b61}
+      .t{font:400 18px Inter,Arial,sans-serif; fill:#536b8d}
+      .warn{font:400 16px Inter,Arial,sans-serif; fill:#cf6f7b}
+      .foot{font:400 17px Inter,Arial,sans-serif; fill:#d6deef}
+      .line{stroke:#f2a0af; stroke-width:5; fill:none; marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect x="20" y="20" width="1560" height="860" rx="36" fill="url(#bg)"/>
+  <text x="105" y="115" class="title">BloodBridge PK</text>
+  <text x="105" y="160" class="subtitle">Human-centered blood-access mapping · actual implementation architecture</text>
+
+  <!-- Top row -->
+  <rect x="110" y="250" rx="22" ry="22" width="305" height="185" class="box"/>
+  <text x="140" y="300" class="h">Public directories</text>
+  <text x="140" y="345" class="t">PBTA · Sundas · Fatimid</text>
+  <text x="140" y="385" class="t">PIMS · Children’s Hospital</text>
+  <text x="140" y="425" class="warn">Public listings only</text>
+
+  <rect x="535" y="250" rx="22" ry="22" width="350" height="185" class="box"/>
+  <text x="565" y="300" class="h">Python + GeoJSON</text>
+  <text x="565" y="345" class="t">Curate and classify listings</text>
+  <text x="565" y="385" class="t">Approximate map pins</text>
+  <text x="565" y="425" class="warn">Never infer live inventory</text>
+
+  <rect x="1045" y="250" rx="22" ry="22" width="355" height="185" class="box"/>
+  <text x="1075" y="300" class="h">GitHub repository</text>
+  <text x="1075" y="345" class="t">Source control</text>
+  <text x="1075" y="385" class="t">README + MIT License</text>
+  <text x="1075" y="425" class="warn">Connected to Amplify</text>
+
+  <!-- Bottom row -->
+  <rect x="110" y="560" rx="22" ry="22" width="330" height="185" class="box"/>
+  <text x="140" y="610" class="h">AWS Amplify Hosting</text>
+  <text x="140" y="655" class="t">Static HTML · CSS · JS</text>
+  <text x="140" y="695" class="t">Patient stories + simulator</text>
+  <text x="140" y="735" class="warn">Live public deployment</text>
+
+  <rect x="565" y="560" rx="22" ry="22" width="350" height="185" class="box"/>
+  <text x="595" y="610" class="h">Amazon Location Maps</text>
+  <text x="595" y="655" class="t">Interactive basemap + markers</text>
+  <text x="595" y="695" class="t">Restricted public API key</text>
+  <text x="595" y="735" class="warn">Used in the live web app</text>
+
+  <rect x="1045" y="560" rx="22" ry="22" width="355" height="185" class="box"/>
+  <text x="1075" y="610" class="h">Amazon Location Routes</text>
+  <text x="1075" y="655" class="t">Road route + journey time</text>
+  <text x="1075" y="695" class="t">Animated patient journey</text>
+  <text x="1075" y="735" class="warn">Requires Routes permission</text>
+
+  <!-- arrows -->
+  <path d="M415 342 H 520" class="line"/>
+  <path d="M885 342 H 1030" class="line"/>
+  <path d="M1223 435 V 520 H 1223" class="line"/>
+  <path d="M875 652 H 1030" class="line"/>
+  <path d="M440 652 H 550" class="line"/>
+  <path d="M1045 342 C 970 342, 900 440, 900 560" class="line"/>
+  <path d="M710 435 V 520 H 440" class="line"/>
+
+  <text x="110" y="825" class="foot">Prototype · public listing sources are real; patient stories, routes, and camp impact are illustrative.</text>
+</svg>
