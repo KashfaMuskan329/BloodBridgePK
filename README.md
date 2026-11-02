@@ -1,112 +1,240 @@
 # BloodBridge PK 🩸
 
-**Every drop matters. Every journey, too.** A patient-centered interactive geospatial map prototype for thalassaemia families and blood donation outreach planners in Pakistan. Built for **AWS Builder Center — Weekend Challenge: Map It (Oct 30–Nov 2, 2026)**.
+**Every drop matters. Every journey, too.**
 
-**Status:** Working client-side implementation + curated geospatial dataset. **NOT yet deployed** from this package. You must configure your own AWS resource access, publish and verify the live link. Do **not** claim Amazon Location map/routing is operational until it has actually been tested with an authorized API key.
+BloodBridge PK is an interactive web application I built for the AWS Builder Center Weekend Challenge: Map It.
 
-## What is implemented
+The idea is to help people explore publicly listed blood banks, hospitals, and thalassaemia support centers in Pakistan through an interactive map. I also wanted to make the experience more personal, so I included fictional patient stories and animated journeys.
 
-- Premium, responsive storytelling UI and friendly CSS-drawn patient character (not depicting a real person).
-- Lahore default (21 curated facilities), switch to Islamabad / Rawalpindi (10 curated facilities).
-- Six fictional patient journeys (three in each metropolitan area).
-- Filter by thalassaemia services, hospital blood bank or other blood-bank listing.
-- Select a listed center to see its **straight-line distance** and public source link.
-- When configured: **Amazon Location Service Maps v2** basemap and **Routes v2** point-to-point car route with genuine route length/travel duration returned by AWS.
-- Before AWS is configured: OpenStreetMap basemap preview, dashed straight line, **no invented journey time**.
-- Hypothetical donation-outreach camp simulator with mean nearest-point distances across 12 **fictional sample neighborhood locations**. There is no actual donation camp, donation inventory, patient-location data or real coverage claim.
-- Medical disclaimer and source transparency on page.
+**Live Website:** https://main.dazwp60yb9ian.amplifyapp.com/
 
-## Where the real data comes from
+**Project Demo:** https://youtu.be/mDQV92jd1Aw
 
-- [Punjab Blood Transfusion Authority licensed blood bank directory](https://pbta.punjab.gov.pk/licensed_blood_banks) — contains **historical license-list entries**. The app does not attest that any listing's license remains current.
-- [Sundas Foundation, Lahore](https://sundas.org/centers/lahore) and [Islamabad](https://legacy.sundas.org/Master/Islamabad) — public provider details.
-- [Fatimid Foundation branches](https://fatimid.org/contact-us/).
-- [Children's Hospital Lahore hematology/thalassaemia](https://chich.edu.pk/hematologyoncology).
-- [PIMS Thalassaemia Center](https://www.pims.gov.pk/department-thalassemia.php).
-- [Pakistan Thalassaemia Welfare Society (PATHWEL)](https://pathwel.org.pk/contact-us/).
-- Other entries are public business-directory search listings with links where official sources were not located.
+## Why I Built This
 
-**Data integrity warning:** All location pin coordinates are approximate, manually selected neighborhood anchor points and are **not verified geocodes of facility entrances**. All blood-stock data is unknown, regardless of selected blood group. The dataset is **not exhaustive, not suitable for emergency guidance**, and was manually curated for a hackathon prototype. No private patient/donor information used. Check centers with official staff before travelling.
+When I was thinking about what to build for this challenge, I wanted to do something different from a regular location finder.
 
-## Run locally
+Families affected by thalassaemia often need to arrange regular transfusions. Finding a suitable center can involve checking different sources, contacting facilities, and figuring out how far they need to travel.
 
-In the project root:
+I started thinking about how mapping technology could make some of this information easier to explore.
+
+That became BloodBridge PK.
+
+I wanted the map to show more than just locations. I wanted people to understand the journey behind them.
+
+## What the Application Does
+
+BloodBridge PK currently covers Lahore and Islamabad/Rawalpindi.
+
+I prepared a dataset of 31 publicly listed facilities, including 21 locations in Lahore and 10 in Islamabad/Rawalpindi.
+
+Users can explore these locations on a map, filter different types of facilities, and view information about the selected center.
+
+I also added six fictional patient scenarios to demonstrate how someone might explore support options from different starting locations.
+
+### Patient Journey
+
+One of the main features is the animated patient journey.
+
+For example, users can select Areeba, a fictional eight-year-old patient from Lahore, and explore her surrounding care network.
+
+After selecting a support center, the application displays a route or an illustrative straight-line preview, depending on whether an AWS route is available.
+
+An animated ambulance then follows the displayed journey, with a distance counter showing its progress.
+
+I added this feature because I wanted to make geographical distance easier to understand instead of only displaying a number.
+
+The ambulance animation is a simulation. It is not connected to real emergency services.
+
+### Interactive Map
+
+The map includes location markers for blood banks, hospitals, and thalassaemia support centers.
+
+I used marker clustering because some facilities are close together and individual markers can become difficult to navigate when the map is zoomed out.
+
+Users can switch between cities, choose different patient stories, select facilities, and filter the displayed locations.
+
+The blood group selection is only a demonstration input. It does not represent available blood stock or medical compatibility.
+
+### Donation Camp Simulator
+
+This is another feature I enjoyed working on.
+
+I wanted to explore what might happen if an additional blood donation outreach point were introduced in a particular neighborhood.
+
+The simulator lets users choose a proposed camp location and compares the modelled average distance to the nearest support point before and after adding it.
+
+These calculations use straight-line distances across fictional sample neighborhood locations.
+
+The results are hypothetical. They do not represent actual road travel, population coverage, or confirmed access to blood supplies.
+
+The goal is to explore geographical access rather than predict real healthcare outcomes.
+
+## Technologies I Used
+
+### Amazon Location Service
+
+I used Amazon Location Service for the interactive map and routing features.
+
+The application uses Amazon Location Maps with MapLibre GL JS to display the geographical interface.
+
+Amazon Location Routes is used to calculate road routes and travel information when a route is available. If a route cannot be retrieved, the application shows an illustrative straight-line preview instead.
+
+### AWS Amplify
+
+I deployed the frontend using AWS Amplify.
+
+The application is connected to my GitHub repository, with the `main` branch used for deployment.
+
+The website is a static application, so it does not require a continuously running backend server.
+
+### Frontend
+
+I used HTML, CSS, and JavaScript to build the interface, patient stories, map interactions, animations, and donation camp simulator.
+
+MapLibre GL JS handles the interactive map.
+
+### Python and GeoJSON
+
+I used Python to prepare the facility dataset and generate GeoJSON.
+
+The browser loads an embedded JavaScript version of this data so the map can display the facility listings without requiring a separate database or backend API.
+
+## Project Architecture
+
+![BloodBridge PK Architecture](assets/BloodBridgePK_architecture_FINAL.svg)
+
+The frontend is hosted on AWS Amplify. It loads the prepared facility data and connects to Amazon Location Service for maps and routing.
+
+The Amazon Location API key is a public browser key with restricted permissions and allowed website origins. It is not an IAM secret access key.
+
+## Project Structure
+
+```text
+BloodBridgePK/
+│
+├── app/
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   ├── config.js
+│   ├── favicon.svg
+│   └── data/
+│       ├── centers.geojson
+│       └── centers.js
+│
+├── assets/
+│   └── BloodBridgePK_architecture_FINAL.svg
+│
+├── scripts/
+│   ├── build_dataset.py
+│   └── embed_dataset.py
+│
+├── tests/
+│   └── test_dataset.py
+│
+├── amplify.yml
+├── LICENSE
+└── README.md
+```
+
+## Running the Project Locally
+
+Clone the repository:
 
 ```bash
-python scripts/build_dataset.py
+git clone https://github.com/KashfaMuskan329/BloodBridgePK.git
+cd BloodBridgePK
+```
+
+Start a local web server:
+
+```bash
 python -m http.server 8000 --directory app
 ```
 
-Open `http://localhost:8000`. With an internet connection, MapLibre GL JS loads from CDN and the OpenStreetMap preview loads tiles. Your browser needs internet access.
+Then open:
 
-## Hook up Amazon Location Service **before publishing**
-
-1. Open AWS Console -> **Amazon Location Service** -> **API keys** -> Create API key in **ap-south-1** (or change `awsRegion` in `app/config.js`).
-2. Authorize the minimal required **Maps GetTile**, and if you want AWS route distance and time, **Routes CalculateRoutes**. Maps v2 style descriptor resources are requested by the MapLibre integration. In the console, check the right v2 Actions and permissions for your region/key.
-3. Put the **public restricted API key** (`v1.public...`) in `app/config.js`. **NEVER paste IAM access key IDs, secret access keys, root credentials or session tokens.** Browser public keys still need strict referrer restrictions and limited actions.
-4. Allow your local origin for testing (`http://localhost:8000/*`) and your exact Amplify URL (`https://main.XXXX.amplifyapp.com/*` or actual deployed domain), then remove localhost if not needed. Set key expiration and usage monitoring.
-5. Reload and confirm the map's caption reads **Amazon Location Service**. Click a support point to confirm **AWS calculated route** with distance and minutes. If API denied, the UI explicitly falls back to an unverified direct line and does not make travel-time claims.
-6. Consider AWS Budgets alerts, CloudWatch/usage dashboards and least privilege. Maps and routes calls **may incur charges** depending on account limits/usage.
-
-Official AWS references:
-- [Amazon Location API keys](https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html)
-- [Maps v2 + MapLibre](https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html)
-- [Routes v2](https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes-origin-destination-waypoints.html)
-
-## Use Amazon S3 in the dataset build pipeline
-
-This is an **optional second AWS data service** in addition to Amazon Location. With AWS CLI configured (in PowerShell from the project root):
-
-```powershell
-.\scripts\publish_s3.ps1 -Bucket YOUR-GLOBALLY-UNIQUE-BUCKET -Region ap-south-1
+```text
+http://localhost:8000
 ```
 
-This creates/uses a **private** S3 bucket, uploads `centers.geojson` with SSE-S3, downloads it to the build, and re-embeds the copy into `app/data/centers.js`. The map uses the bundled data so the S3 bucket does not need any public read permission or CORS config. Do not claim this S3 pipeline was used unless you actually run it successfully.
+The frontend needs an internet connection to load the map library and map tiles.
 
-Alternatively manually copy the dataset with:
+If you are setting up your own Amazon Location configuration, use an authorized public API key in `app/config.js` and allow your local origin in the API key restrictions.
+
+Never put AWS IAM secret access keys in frontend code.
+
+To regenerate the facility dataset:
 
 ```bash
-aws s3 cp app/data/centers.geojson s3://YOUR-BUCKET/bloodbridge/centers.geojson --sse AES256 --region ap-south-1
-aws s3 cp s3://YOUR-BUCKET/bloodbridge/centers.geojson app/data/centers.geojson --region ap-south-1
+python scripts/build_dataset.py
+```
+
+To rebuild the browser's JavaScript dataset from the GeoJSON file:
+
+```bash
 python scripts/embed_dataset.py
 ```
 
-## Publish the frontend to AWS Amplify
-
-- Download/use `BloodBridgePK_Amplify_Deploy.zip` included separately. First update `app/config.js` with the authorized Amazon Location public key, then **rebuild** the frontend zip so it includes your settings; or deploy the zip for OpenStreetMap preview while setting up AWS.
-- Console: **AWS Amplify -> Create new app -> Deploy without Git**. Upload a zip containing `index.html`, `style.css`, `app.js`, `config.js`, and the `data/` folder **at the ZIP root** (no extra `app/` parent folder).
-- Test the URL in an incognito window, switch cities, click a location, verify the Amazon map actually loaded, test AWS route and simulation.
-- The live app is only publicly reachable after *you* deploy it. This package cannot create AWS resources on your behalf without your AWS session.
-
-## Test and verify
+To run the dataset tests:
 
 ```bash
 python -m unittest discover -s tests -v
-node --check app/app.js
 ```
 
-These confirm dataset integrity and JS syntax. Browser interactions have also been smoke-tested in a simulated map runtime; **real AWS calls and actual publicly hosted browser behavior remain unverified** until you deploy and test them.
+The frontend is deployed using the `amplify.yml` configuration, which publishes the contents of the `app` directory.
 
-## Safety / privacy
+## Dataset and Limitations
 
-This is not an emergency hotline or clinical decision system. Do not use any figures or labels to claim live blood inventory, compatibility, blood-group matching, donor eligibility, verified center opening hours, verified current licensure, or outcomes for real people. Never enter real patient names, contact info or addresses into a public demo.
+The dataset contains manually curated public facility listings from sources including the Punjab Blood Transfusion Authority, Sundas Foundation, Fatimid Foundation, Children's Hospital Lahore, PIMS, and other public directories.
 
-## Files
+The coordinates are approximate neighborhood locations, not verified facility entrances.
 
-```text
-app/
-  index.html          main UI + story design
-  style.css           design system + mobile layout
-  app.js              map, patients, filters, routes and simulator
-  config.js           insert public restricted Amazon Location API key here
-  data/centers.geojson  public-directory location data
-  data/centers.js       static browser data generated from GeoJSON
-assets/
-  architecture.svg    editable architecture diagram
-tests/
-  test_dataset.py    offline structure/safety tests
-```
+Some directory listings may be historical, so the current operating status of a facility should not be assumed.
 
-## Licensing and attribution
+BloodBridge PK is an educational prototype. It does not provide real-time blood availability, verified medical eligibility, emergency services, or real ambulance tracking.
 
-Code: MIT License. Facility listing sources remain the property of their respective publishers. Map tiles: OpenStreetMap contributors in preview, Amazon Location maps when configured. The map must preserve on-screen attribution. No claims of endorsement by the listed centers or AWS.
+All patient stories, starting locations, and proposed donation camps are fictional. No private patient records are used.
+
+Anyone planning an actual visit should contact the relevant healthcare provider directly.
+
+## Challenges and What I Learned
+
+The part that took the most effort was making the map, patient journeys, and facility data work together.
+
+I had to work through map configuration, API permissions, route calculations, marker positioning, and ambulance animation behavior.
+
+I also had to think carefully about how to present the facility information because approximate coordinates and publicly listed addresses should not be confused with verified medical information.
+
+Working on the simulator was interesting too. I wanted the Before and After comparison to be understandable without making claims that the data could not support.
+
+This project helped me gain more practical experience with AWS Amplify, Amazon Location Service, geospatial data, and frontend development.
+
+It also made me think more about the experience of the person using an application, rather than focusing only on the technical features.
+
+## What I Would Improve Next
+
+I'd like to add more cities, improve facility coordinate accuracy, and explore ways to keep facility information updated through verified sources.
+
+Another improvement would be better accessibility and mobile usability.
+
+For this challenge, I focused on making a working prototype that demonstrates the concept clearly.
+
+## Final Thoughts
+
+BloodBridge PK started as an idea for a map, but it became a project about making geographical information easier to understand.
+
+It's still a prototype, and there's a lot that could be improved.
+
+But building it helped me see how cloud services, mapping, and simple storytelling can work together to explore a meaningful problem.
+
+**Behind every pin on a map, there's a person.**
+
+**Every drop matters. Every journey, too.**
+
+Built for the AWS Builder Center Weekend Challenge: Map It.
+
+## License
+
+This project is available under the MIT License. See [LICENSE](LICENSE) for details.
