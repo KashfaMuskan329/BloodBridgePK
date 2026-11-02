@@ -101,14 +101,6 @@ app/
   config.js           insert public restricted Amazon Location API key here
   data/centers.geojson  public-directory location data
   data/centers.js       static browser data generated from GeoJSON
-scripts/
-  build_dataset.py   rebuild curated directory snapshot
-  embed_dataset.py   embed S3/local GeoJSON in frontend
-  publish_s3.ps1     optional private S3 dataset roundtrip
-submission/
-  PROJECT_WRITEUP.md  draft AWS Builder Center write-up
-  DEMO_SCRIPT.md      under-3-minute storyboard
-  CHECKLIST.md        last-step checklist
 assets/
   architecture.svg    editable architecture diagram
 tests/
